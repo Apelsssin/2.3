@@ -1,8 +1,9 @@
 ﻿#include <iostream>
 class Calculator {
-public:
+private:
     double num1;
     double num2;
+public:
     double add() {
         return num1 + num2;
     }
@@ -21,16 +22,16 @@ public:
     double divide_2_1() {
         return num2 / num1;
     }
-    bool set_num1(double num1) {
-        if (num1 != 0) {
-            this->num1 = num1;
+    bool set_num1(double num) {
+        if (num != 0) {
+            num1 = num;
             return true;
         }
         else return false;
     }
-    bool set_num2(double num2) {
-        if (num2 != 0) {
-            this->num2 = num2;
+    bool set_num2(double num) {
+        if (num != 0) {
+            num2 = num;
             return true;
         }
         else return false;

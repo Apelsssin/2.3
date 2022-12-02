@@ -1,12 +1,13 @@
 ﻿#include <iostream>
 #include <string>
 class Counter {
-public: 
+private:
     int i;
+public: 
     Counter() {
         i = 1;
     }
-    void change(int i){
+    Counter(int i){
         this->i = i;
     }
     int inc() {
@@ -26,15 +27,16 @@ int main()
     setlocale(LC_ALL, "Russian");
     system("chcp 1251");
     bool work = true;
-    Counter counter;
     std::cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
     std::string que;
     std::getline(std::cin, que);
+    int j = 1;
+    Counter counter;
     if (que == "да"){
-        int j;
         std::cout << "Введите начальное значение счётчика: ";
         std::cin >> j;
-        counter.change(j);
+        Counter counter1(j);
+        counter = counter1;
     }
     while (work) {
         std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
